@@ -25,8 +25,8 @@ Rails.application.routes.draw do
   #       get 'sold'
   #     end
   #   end
-  resources :students do only [:new, :create, :show, :edit, :update]
-  resources :school_classes do only [:new, :create, :show, :edit, :update]
+  resources :students, only: [:new, :create, :show, :edit, :update]
+  resources :school_classes, only: [:new, :create, :show, :edit, :update]
   # Example resource route with sub-resources:
   #   resources :products do
   #     resources :comments, :sales
