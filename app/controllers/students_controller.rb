@@ -23,6 +23,6 @@ class StudentsController < ApplicationController
     redirect_to student_path(@student)
   end
 
-  
-  
+
+
 end
