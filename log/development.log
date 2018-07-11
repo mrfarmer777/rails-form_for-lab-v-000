@@ -243,3 +243,11 @@ Processing by StudentsController#create as HTML
   [1m[35m (0.0ms)[0m  commit transaction
 Redirected to http://165.227.81.218:53071/students/4
 Completed 302 Found in 7ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/students/4" for 76.245.251.194 at 2018-07-11 02:43:08 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mStudent Load (0.1ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 4]]
+  Rendered students/show.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 23ms (Views: 21.8ms | ActiveRecord: 0.1ms)
