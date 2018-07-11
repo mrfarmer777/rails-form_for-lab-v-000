@@ -397,3 +397,29 @@ ActionView::Template::Error (wrong number of arguments (given 0, expected 1..2))
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (0.8ms)
   Rendered /usr/local/rvm/gems/ruby-2.3.1/gems/actionpack-4.2.10/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.9ms)
+
+
+Started GET "/students/new" for 76.245.251.194 at 2018-07-11 02:47:24 +0000
+Processing by StudentsController#new as HTML
+  Rendered students/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 229ms (Views: 228.2ms | ActiveRecord: 0.5ms)
+
+
+Started POST "/students" for 76.245.251.194 at 2018-07-11 02:47:29 +0000
+Processing by StudentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vydj2LmKA9GS+QaxqgpiZntz8IN05K9b1smUYL1C62XHMg/vYl7XUM2c7JMGPXEQ2yVN8g/evmWLnahXomVQjg==", "student"=>{"first_name"=>"bleh", "last_name"=>"feasrf"}, "commit"=>"Create Student"}
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mINSERT INTO "students" ("first_name", "last_name", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["first_name", "bleh"], ["last_name", "feasrf"], ["created_at", "2018-07-11 02:47:29.306706"], ["updated_at", "2018-07-11 02:47:29.306706"]]
+  [1m[35m (5.6ms)[0m  commit transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.0ms)[0m  commit transaction
+Redirected to http://165.227.81.218:53071/students/5
+Completed 302 Found in 9ms (ActiveRecord: 6.5ms)
+
+
+Started GET "/students/5" for 76.245.251.194 at 2018-07-11 02:47:29 +0000
+Processing by StudentsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mStudent Load (0.2ms)[0m  [1mSELECT  "students".* FROM "students" WHERE "students"."id" = ? LIMIT 1[0m  [["id", 5]]
+  Rendered students/show.html.erb within layouts/application (0.5ms)
+Completed 200 OK in 46ms (Views: 12.3ms | ActiveRecord: 0.2ms)
