@@ -21,8 +21,7 @@ class SchoolClassesController<ApplicationController
     @school_class.update(params.require(:school_class).permit(:title, :room_number))
     redirect_to school_class_path
   end
-  
-    
-  end
-  
+
+
+
 end
